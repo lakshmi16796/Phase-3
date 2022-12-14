@@ -14,7 +14,7 @@ pipeline {
 	    env.feature = input message: "Please select a Feature for build" ,   
 	                        parameters: [
 		   		extendedChoice( defaultValue: 'Docker', description: '', descriptionPropertyValue: 'Docker,Xen,QT', multiSelectDelimiter: ',', 
-	     			name: 'feature', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', value: $x, visibleItemCount: 5)
+	     			name: 'feature', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', value: ${x}, visibleItemCount: 5)
                		        ]
 	    echo "Selected feature is ${feature}"
 		 
