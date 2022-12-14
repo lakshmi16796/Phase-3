@@ -40,7 +40,7 @@ pipeline {
 			echo "Line number is"
 			echo "$n"
 		
-			lines=$(grep -rin $i local.conf | head -1 | awk '{print $1}' | cut -d# -f 3)
+			lines=$(grep -rin $i local.conf | head -1 | awk '{print $1}' | cut -d# -f 4)
 			echo "Number of lines to edit is"
 			echo "$lines"
 		
