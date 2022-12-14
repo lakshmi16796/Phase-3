@@ -23,9 +23,8 @@ pipeline {
 			echo "recognised pattern is"
 			echo $n
 			
-			#echo "$n" >> properties
-			sed -i -e "${n}" properties
-			
+			#echo "feature=$n" >> properties
+						
 			#sed -n "/"###"/p" local.conf | awk '{print $2 }' properties <<< "="
         		#echo "$line"
 			'''
