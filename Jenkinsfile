@@ -19,7 +19,7 @@ pipeline {
 			echo "your input"
 			echo "$input"
 			
-			n=$(grep -rin '###' local.conf | head -1 )
+			n=$(grep -rin ### local.conf | head -1 )
 			echo "recognised pattern is"
 			echo $n
 			'''
