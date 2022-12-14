@@ -11,10 +11,11 @@ pipeline {
          {
             //def choices = ["Docker","Xen","QT"]
 	    CHOICES = ["tag1", "tag2", "tag3"];
+	    def ChoiceString = CHOICES.join(", ")
 	    env.feature = input message: "Please select a Feature for build" ,   
 	                        parameters: [
 		   		extendedChoice( defaultValue: 'tag1', description: '', descriptionPropertyValue: 'tag1,tag2,tag3', multiSelectDelimiter: ',', 
-	     			name: 'feature', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', value: CHOICES, visibleItemCount: 5)
+	     			name: 'feature', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', value: 'ChoiceString', visibleItemCount: 5)
                		        ]
 	    echo "Selected feature is ${feature}"
 		 
