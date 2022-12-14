@@ -24,7 +24,7 @@ pipeline {
 			echo $n
 			
 			#echo "$n" >> properties
-			sed -i "feature=$n" properties
+			sed -i "1i feature=$n" properties
 			
 			#sed -n "/"###"/p" local.conf | awk '{print $2 }' properties <<< "="
         		#echo "$line"
