@@ -19,7 +19,10 @@ pipeline {
 			echo "your input"
 			echo "$input"
 			
-			n=$"(grep -rin "###" local.conf | awk '{print $2 }')"
+			n=$(grep -rin "###" local.conf | awk '{print $2 }')
+			x="$n"
+			echo "x is"
+			echo $x
 			echo "recognised pattern is"
 			echo $n
 			echo $n | sed 's/ /,/g'
