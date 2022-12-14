@@ -22,6 +22,8 @@ pipeline {
 			n=$(grep -rin "###" local.conf | awk '{print $2 }')
 			echo "recognised pattern is"
 			echo $n
+			echo ${n// /,}
+			echo $n
 			
 			echo "feature=$n" >> properties
 						
