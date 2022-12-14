@@ -22,11 +22,11 @@ pipeline {
 			n=$(grep -rin "###" local.conf | awk '{print $2 }')
 			echo "recognised pattern is"
 			echo $n
-			x=echo $n | sed 's/ /,/g'
+			x=$(sed "s/$n/ /,/g')
 			echo "x is"
 			echo $x
 			
-			#echo "feature=$n | sed 's/ /,/g'" >> properties
+			echo "feature=$n" >> properties
 						
 			#sed -n "/"###"/p" local.conf | awk '{print $2 }' properties <<< "="
         		#echo "$line"
