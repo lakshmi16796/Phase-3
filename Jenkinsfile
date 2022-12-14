@@ -19,12 +19,12 @@ pipeline {
 			echo "your input"
 			echo "$input"
 			
-			n=$(grep -rin "###" local.conf | head -1 | awk '{print $2 }')
+			n=$(grep -rin "###" local.conf | awk '{print $2 }')
 			echo "recognised pattern is"
 			echo $n
 			
-			line=$(sed -n "/"###"/p" local.conf | awk '{print $2 }')
-        		echo "$line"
+			#line=$(sed -n "/"###"/p" local.conf | awk '{print $2 }')
+        		#echo "$line"
 			'''
 		  }
 		} 
