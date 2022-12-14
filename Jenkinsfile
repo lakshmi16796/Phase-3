@@ -22,7 +22,7 @@ pipeline {
 			n=$(grep -rin "###" local.conf | awk '{print $2 }')
 			echo "recognised pattern is"
 			echo $n
-			x=$(sed "s/$n/ /,/g')
+			x=$(echo $n | sed "s/ /,/g')
 			echo "x is"
 			echo $x
 			
