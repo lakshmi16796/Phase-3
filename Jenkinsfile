@@ -26,7 +26,7 @@ pipeline {
 			#echo "x is"
 			echo $x
 			> Properties
-			echo "feature=$x" >> Properties
+			#echo "feature=$x" >> Properties
 					
 			'''
 		  }
