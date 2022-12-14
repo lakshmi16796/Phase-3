@@ -9,9 +9,10 @@ pipeline {
 	      
 	script {
 		
-                 
+                 echo "selected parameter is"		      
+	         echo "${env.choices}"	 
 	    
-		dir("/home/lakshmi/test/local")  
+		dir("/home/lakshmi/dell_pods/poky/build/conf")  
 		  {
       	        	sh '''#!/bin/bash
 			input=$(printenv choices)
@@ -25,13 +26,12 @@ pipeline {
 			#echo "x is"
 			echo $x
 			
-			echo "feature=$x" >> properties
+			echo "feature=$x" >> Properties
 					
 			'''
 		  }
 		
-		 echo "selected parameter is"		      
-	         echo "${env.choices}"	
+		
 		} 
   }
   }
