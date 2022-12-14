@@ -12,7 +12,7 @@ pipeline {
             echo "selected parameter is"		      
 	    echo "${env.choices}"	      
 	    
-		dir("/home/lakshmi/test")  
+		dir("/home/lakshmi/test/local")  
 		  {
       	        	sh '''#!/bin/bash
 			input=$(printenv choices)
