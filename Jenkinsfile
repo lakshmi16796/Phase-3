@@ -11,7 +11,7 @@ pipeline {
          {
             //def choices = ["Docker","Xen","QT"]
 	    CHOICES = ["tag1","tag2","tag3"];
-	    String ChoiceString = CHOICES.join(", ")
+	    String ChoiceString = CHOICES.join(",")
 	    print ChoiceString
 	    env.feature = input message: "Please select a Feature for build" ,   
 	                        parameters: [
