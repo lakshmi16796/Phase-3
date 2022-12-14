@@ -23,8 +23,8 @@ pipeline {
 			echo "recognised pattern is"
 			echo $n
 			x=$(echo $n | sed 's/ /,/g')
-			#echo "x is"
-			#echo $x
+			echo "x is"
+			echo $x
 			
 			echo "feature=$n" >> properties
 						
