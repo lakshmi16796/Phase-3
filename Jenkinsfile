@@ -12,13 +12,13 @@ pipeline {
             //def choices = ["Docker","Xen","QT"]
 	    CHOICES = ["tag1","tag2","tag3"];
 	    String ChoiceString = CHOICES.join(",")
-	    String s1 = "Docker"
-	    String s2 = "Xen"
+	    String s1 = "Docker,Xen,QT"
+	 
 	    print ChoiceString
 	    env.feature = input message: "Please select a Feature for build" ,   
 	                        parameters: [
 		   		extendedChoice( defaultValue: 'tag1', description: '', descriptionPropertyValue: 'tag1,tag2,tag3', multiSelectDelimiter: ',', 
-	     			name: 'feature', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', value: 's1', 's2', visibleItemCount: 5)
+	     			name: 'feature', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', value: 's1', visibleItemCount: 5)
                		        ]
 	    echo "Selected feature is ${feature}"
 		 
