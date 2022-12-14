@@ -9,14 +9,7 @@ pipeline {
 	      
 	 script
          {
-	    def result = input(message: 'Set some values', parameters: [
-            booleanParam(defaultValue: true, description: '', name: 'SomeBoolean'),
-            choice(choices: "Choice One\nChoice Two", description: '', name: 'SomeChoice'),
-            stringParam(defaultValue: "Text", description: '', name: 'SomeText')
-            ]) as Map<String, String>	 
-		    
-	    echo "${result.SomeBoolean}, ${result.SomeChoice}, ${result.SomeText}"
-		 
+	   
             //def choices = ["Docker","Xen","QT"]
 	    CHOICES = ["tag1","tag2","tag3"];
 	    String ChoiceString = CHOICES.join(",")
@@ -26,7 +19,7 @@ pipeline {
 	    env.feature = input message: "Please select a Feature for build" ,   
 	                        parameters: [
 		   		extendedChoice( defaultValue: 'Docker', description: '', descriptionPropertyValue: 'Docker,Xen,QT', multiSelectDelimiter: ',', 
-	     			name: 'feature', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', value: 's1', visibleItemCount: 5)
+	     			name: 'feature', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', value: '{s1}', visibleItemCount: 5)
                		        ]
 	    echo "Selected feature is ${feature}"
 		 
