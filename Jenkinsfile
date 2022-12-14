@@ -81,7 +81,7 @@ pipeline {
 			echo "Line number is"
 			echo "$n1"
 
-			lines1=$(grep -rin $i local.conf | head -1 | awk '{print $1}' | cut -d# -f 2)
+			lines1=$(grep -rin $i local.conf | head -1 | awk '{print $1}' | cut -d# -f 4)
 			echo "Number of lines to edit is"
 			echo "$lines1"
 		
