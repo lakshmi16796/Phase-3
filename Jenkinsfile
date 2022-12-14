@@ -22,8 +22,8 @@ pipeline {
 			n=$(grep -rin "###" local.conf | awk '{print $2 }')
 			echo "recognised pattern is"
 			echo $n
-			x = echo $n | sed 's/ /,/g'
-			echo "x i"
+			x=echo $n | sed 's/ /,/g'
+			echo "x is"
 			echo $x
 			
 			#echo "feature=$n | sed 's/ /,/g'" >> properties
