@@ -27,6 +27,35 @@ pipeline {
 			echo $x
 			> Properties
 			echo "feature=$x" >> Properties
+			
+			array=()
+			IFS='+, ' read -ra array <<< $input
+			for i in "${array[@]}"; do
+  				echo "$i"
+			
+			#line=$(sed -n "/$i/p" local.conf | head -1)
+        		#echo "$line"
+		
+			n=$(grep -rin $i local.conf | head -1 | awk '{print $1 }' | cut -d: -f 1)
+			echo "Line number is"
+			echo "$n"
+		
+			lines=$(grep -rin $i local.conf | head -1 | awk '{print $1}' | cut -d# -f 2)
+			echo "Number of lines to edit is"
+			echo "$lines"
+		
+			#Enabling the mentioned feature for build in local.conf 
+			sum=$n
+			for (( x=1 ; x<=$lines ; x++ )); 
+			do
+				echo "iterator is"	
+	  			echo "$x"
+				sum=$(($sum + 1))
+				echo "$sum"
+    				sed -i "$sum s/#//" local.conf
+		
+			done
+			done
 					
 			'''
 		  }
