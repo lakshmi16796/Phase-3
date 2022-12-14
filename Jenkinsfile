@@ -23,7 +23,7 @@ pipeline {
 			echo "recognised pattern is"
 			echo $n
 			
-			line=$(sed -n "/"###"/p" local.conf | head -1 | awk '{print $2 }')
+			line=$(sed -n "/"###"/p" local.conf | awk '{print $2 }')
         		echo "$line"
 			'''
 		  }
