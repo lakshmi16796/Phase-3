@@ -25,7 +25,7 @@ pipeline {
 			x=$(echo $n | sed 's/ /,/g')
 			#echo "x is"
 			echo $x
-			
+			> Properties
 			echo "feature=$x" >> Properties
 					
 			'''
