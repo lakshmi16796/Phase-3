@@ -23,9 +23,9 @@ pipeline {
 			echo "recognised pattern is"
 			echo $n
 			
-			echo "$n" >> properties
+			#echo "$n" >> properties
 			
-			#line=$(sed -n "/"###"/p" local.conf | awk '{print $2 }')
+			sed -n "/"###"/p" local.conf | awk '{print $2 }' properties <<< "="
         		#echo "$line"
 			'''
 		  }
