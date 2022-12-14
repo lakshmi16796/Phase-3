@@ -24,8 +24,9 @@ pipeline {
 			echo $n
 			
 			#echo "$n" >> properties
+			sed -i "=\\$n" properties
 			
-			sed -n "/"###"/p" local.conf | awk '{print $2 }' properties <<< "="
+			#sed -n "/"###"/p" local.conf | awk '{print $2 }' properties <<< "="
         		#echo "$line"
 			'''
 		  }
