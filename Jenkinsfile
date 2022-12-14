@@ -19,7 +19,7 @@ pipeline {
 			echo "your input"
 			echo "$input"
 			
-			n=$(grep -rin "###" local.conf | head -1 | awk '{print $1 }' | cut -d[A-Z] -f 1)
+			n=$(grep -rin "###" local.conf | head -1 | awk '{print $1 }' | cut -d# -f 4)
 			echo "recognised pattern is"
 			echo $n
 			'''
