@@ -9,8 +9,7 @@ pipeline {
 	      
 	script {
 		
-            echo "selected parameter is"		      
-	    echo "${env.choices}"	      
+                 
 	    
 		dir("/home/lakshmi/test/local")  
 		  {
@@ -30,6 +29,9 @@ pipeline {
 					
 			'''
 		  }
+		
+		 echo "selected parameter is"		      
+	         echo "${env.choices}"	
 		} 
   }
   }
