@@ -12,7 +12,7 @@ pipeline {
             echo "selected parameter is"		      
 	    echo "${env.choices}"	      
 	    
-		dir("/home/lakshmi/dell_pods/poky/build/conf")  
+		dir("/home/lakshmi")  
 		  {
       	        	sh '''#!/bin/bash
 			input=$(printenv choices)
